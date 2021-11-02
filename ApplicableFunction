@@ -1,0 +1,32 @@
+//--------------------------------------------------------------
+void ofApp::draw(){
+
+    ofBackground(255, 255, 255);
+    
+    ofSetColor(0);
+    
+    ofSetRectMode(OF_RECTMODE_CENTER);
+    
+    ofSetLineWidth(2);
+    ofNoFill();
+    
+    ofSeedRandom(mouseX);
+    for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 5; j++){
+            float x = ofMap(i, 0, 4, 100, 700);
+            float y = ofMap(j, 0, 4, 100, 700);
+            
+            for (int k = 0; k < 10; k++){
+                float width = ofMap(k,0, 9, 5, 144);
+                
+                if (ofRandom(0,1) < 0.95){
+                    ofDrawRectangle(x,y,width,width);
+                }
+            }
+        }
+    }
+    
+    
+}
+
+//--------------------------------------------------------------
